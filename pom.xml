@@ -15,6 +15,7 @@
         <native.maven.plugin.version>0.9.28</native.maven.plugin.version>
         <maven-jar-plugin.version>3.2.0</maven-jar-plugin.version>
         <jackson.core.version>2.16.1</jackson.core.version>
+        <os-maven-plugin.version>1.7.0</os-maven-plugin.version>
     </properties>
 
     <dependencies>
@@ -65,6 +66,18 @@
             <version>${jackson.core.version}</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <!-- detect OS classifier, needed for distribution Zip file -->
+        <extensions>
+            <extension>
+                <groupId>kr.motd.maven</groupId>
+                <artifactId>os-maven-plugin</artifactId>
+                <version>${os-maven-plugin.version}</version>
+            </extension>
+        </extensions>
+    </build>
+
     <repositories>
         <repository>
             <id>tencent</id>
